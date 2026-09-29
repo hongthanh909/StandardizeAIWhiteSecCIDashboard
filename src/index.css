@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+/* ─── Design tokens ─────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:      #07091c;
+  --bg-sidebar:   #05071a;
+  --bg-surface:   #0c1229;
+  --bg-surface-2: #101630;
+  --bg-surface-3: #141b38;
+  --bg-input:     #0a1020;
+
+  /* Borders */
+  --border:       #1c2847;
+  --border-light: #243358;
+  --border-focus: #3b63c8;
+
+  /* Text */
+  --text-primary:  #d8e4f8;
+  --text-secondary:#7f9abf;
+  --text-muted:    #3e5578;
+  --text-dim:      #253548;
+
+  /* Accent – blue */
+  --accent:      #4a7ef0;
+  --accent-dim:  #1e40a0;
+  --accent-glow: rgba(74,126,240,0.15);
+
+  /* Status */
+  --success:    #22c55e;
+  --warning:    #f59e0b;
+  --danger:     #ef4444;
+  --critical:   #dc2626;
+  --high:       #ef4444;
+  --medium:     #f59e0b;
+  --low:        #4a7ef0;
+  --info:       #6366f1;
+  --neutral:    #475569;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root { min-height: 100%; }
+
+/* ─── Scrollbars ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-focus); }
+
+/* ─── Utilities ─────────────────────────────────────────────────────── */
+.font-mono { font-family: var(--font-mono) !important; }
+
+/* select reset */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%233e5578' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 24px !important;
+}
+
+/* pulse animation for running tasks */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+.pulse { animation: pulse-dot 1.4s ease-in-out infinite; }
+
+/* screen transition */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-slide { animation: fadeSlide 180ms cubic-bezier(0.16,1,0.3,1); }

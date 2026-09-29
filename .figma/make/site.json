@@ -1,0 +1,10 @@
+{
+  "description": "Provides a unified dark-themed dashboard for monitoring Python web security via integrated CodeBERT and Checkmarx scans in CI/CD pipelines.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
